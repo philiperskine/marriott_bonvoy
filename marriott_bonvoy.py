@@ -1,24 +1,34 @@
 import random
+import time
 
-""" Assign a question to an answer as a key value pair
+""" Make a dictionary of questions
+Assign a question to an answer as a key value pair
 Every time a question is generated
 eg. question 1:"""
 
+# MAIN
+how_many_questions = 3
+current_question_number = 0
 score = 0
-question = "What is the name of the hotel? "
-correct_answer = "Bankside"
+question_1 = "Q1: What is the name of the hotel? "
+correct_answer_1 = "Bankside"
 
-# Main
 print("Welcome to the Marriott Bonvoy quiz!")
-user_answer = input(question)
+time.sleep(1)
+while current_question_number < how_many_questions:
+    user_answer = input(question_1)
     # Correct answer
-if correct_answer.lower() == user_answer.lower():
-    score += 1
-    print("Correct!")
-# Incorrect answer     
-else:
-    score -= 1
-    print("Incorrect.")
+    if correct_answer_1.lower() == user_answer.lower():
+        score += 1
+        print("Correct")
+    # Incorrect answer     
+    else:
+        score -= 1
+        print("Incorrect")
+    print("Your score is now: " + str(score))
+    print("")
+    current_question_number += 1
+    time.sleep(1)
 
 print("Thanks for playing!")
 print("Your final score is: " + str(score))
