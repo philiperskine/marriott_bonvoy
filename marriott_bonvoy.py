@@ -7,17 +7,18 @@ eg. question 1:"""
 score = 0
 question = "What is the name of the hotel? "
 correct_answer = "Bankside"
-correct = False
 
 # Main
-print("Welcome to the Marriott Bonvoy quiz!\nPlease answer this question.")
+print("Welcome to the Marriott Bonvoy quiz!")
 user_answer = input(question)
     # Correct answer
-if correct_answer.lower == user_answer.lower:
+if correct_answer.lower() == user_answer.lower():
     score += 1
+    print("Correct!")
 # Incorrect answer     
 else:
     score -= 1
+    print("Incorrect.")
 
 print("Thanks for playing!")
 print("Your final score is: " + str(score))
