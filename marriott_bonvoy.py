@@ -5,22 +5,24 @@ Every time a question is generated
 eg. question 1:"""
 
 score = 0
-question = ''
-answer = ''
+question = "What is the name of the hotel? "
+answer = "Bankside Hotel Autograph Collection"
 correct = False
 
 # Main
-if correct = False:
-    input("What is the answer to this question?: ")
-        # Correct answer
-        if answer == input().lower
-            print ("Correct! Well done. + 1 point")
-            score += 1
-            correct = True
-        # Incorrect answer     
-        else:
-            print("Incorrect. Try again. - 1 point")
-            score -= 1
+while correct == False:
+    input("Please answer this question." + question")
+    # Correct answer
+    if answer == input().lower:
+        print ("Correct! Well done. + 1 point")
+        score += 1
+        correct = True
+    # Incorrect answer     
+    else:
+        print("Incorrect. Try again. - 1 point")
+        score -= 1
+else:
+    print("Thanks for playing!")
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
@@ -39,25 +41,25 @@ if correct = False:
 # X5 Ambassador Elite (100+ Nights and 23k USD qualifying spend/Year)
 
 # MAIN
-while True:
+# while True:
     # Member level list
-    member_level_list = ['Non-member', 'Member', 'Silver Elite', 'Gold Elite', 'Platinum Elite', 'Titanium Elite', 'Ambassador Elite']
+    # member_level_list = ['Non-member', 'Member', 'Silver Elite', 'Gold Elite', 'Platinum Elite', 'Titanium Elite', 'Ambassador Elite']
     # Random member level
-    random_member_level = (member_level_list[random.randint(0,6)])
+    # random_member_level = (member_level_list[random.randint(0,6)])
     # Member code question
-    if random_member_level == member_level_list[0]:
-        user_input = input("Does a non-member have a member code? ")
-    else:
-        user_input = input("What is the member code for " + random_member_level + " level?: ")
+    # if random_member_level == member_level_list[0]:
+        # user_input = input("Does a non-member have a member code? ")
+    # else:
+        # user_input = input("What is the member code for " + random_member_level + " level?: ")
 
 # Index 0 -> Non-member
-    while random_member_level == member_level_list[0]:
-        if user_input == "no":
-            print("CORRECT")
-            break
-        else:
-            print("INCORRECT")
-            break
+    # while random_member_level == member_level_list[0]:
+        # if user_input == "no":
+            # print("CORRECT")
+            # break
+        # else:
+            # print("INCORRECT")
+            # break
 
 # BENEFITS
 # Member
