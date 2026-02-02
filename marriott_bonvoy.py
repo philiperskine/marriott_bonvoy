@@ -6,23 +6,21 @@ eg. question 1:"""
 
 score = 0
 question = "What is the name of the hotel? "
-answer = "Bankside Hotel Autograph Collection"
+correct_answer = "Bankside"
 correct = False
 
 # Main
-while correct == False:
-    input("Please answer this question." + question")
+print("Welcome to the Marriott Bonvoy quiz!\nPlease answer this question.")
+user_answer = input(question)
     # Correct answer
-    if answer == input().lower:
-        print ("Correct! Well done. + 1 point")
-        score += 1
-        correct = True
-    # Incorrect answer     
-    else:
-        print("Incorrect. Try again. - 1 point")
-        score -= 1
+if correct_answer.lower == user_answer.lower:
+    score += 1
+# Incorrect answer     
 else:
-    print("Thanks for playing!")
+    score -= 1
+
+print("Thanks for playing!")
+print("Your final score is: " + str(score))
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
