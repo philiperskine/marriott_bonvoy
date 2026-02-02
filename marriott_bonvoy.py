@@ -14,6 +14,7 @@ question_1 = "Q1: What is the name of the hotel? "
 correct_answer_1 = "Bankside"
 
 print("Welcome to the Marriott Bonvoy quiz!")
+print("Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
 time.sleep(1)
 while current_question_number < how_many_questions:
     user_answer = input(question_1)
