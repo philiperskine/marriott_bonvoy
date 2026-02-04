@@ -8,32 +8,36 @@ eg. question 1:"""
 
 # QUESTION DICTIONARY
 question_list = {
-    '1':"What is the name of the hotel?",
-    '2':"What is question 2?"
+    '1':"What is the name of the hotel? "
+}
+
+# ANSWER DICTIONARY
+answer_list = {
+    '1':"Bankside"
 }
 
 # MAIN
+# Quiz length currently hardcoded to 3 questions
 how_many_questions = 3
 current_question_number = 0
 score = 0
-# Random question key currently hardcoded for 2 questions 
-random_question_key = str(random.randint(1,2))
-question_1 = "Q1: What is the name of the hotel? "
-correct_answer_1 = "Bankside"
+# Random question key from question_list dictionary 
+current_random_question_key = str(random.randint(1,len(question_list)))
+current_question = (question_list[current_random_question_key])
+current_correct_answer = (answer_list[current_random_question_key])
 
 print("Welcome to the Marriott Bonvoy quiz!")
 time.sleep(2)
 print("Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
 time.sleep(1)
 while current_question_number < how_many_questions:
-    user_answer = input(question_1)
+    user_answer = input(current_question)
     # Correct answer
-    if correct_answer_1.lower() == user_answer.lower():
+    if current_correct_answer.lower() == user_answer.lower():
         score += 1
         print("Correct")
     # Incorrect answer     
     else:
-        score -= 1
         print("Incorrect")
     print("Your score is now: " + str(score))
     current_question_number += 1
@@ -41,7 +45,6 @@ while current_question_number < how_many_questions:
 
 print("Thanks for playing!")
 print("Your final score is: " + str(score))
-print(question_list[random_question_key])
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
