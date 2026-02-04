@@ -6,10 +6,18 @@ Assign a question to an answer as a key value pair
 Every time a question is generated
 eg. question 1:"""
 
+# QUESTION DICTIONARY
+question_list = {
+    '1':"What is the name of the hotel?",
+    '2':"What is question 2?"
+}
+
 # MAIN
 how_many_questions = 3
 current_question_number = 0
 score = 0
+# Random question key currently hardcoded for 2 questions 
+random_question_key = str(random.randint(1,2))
 question_1 = "Q1: What is the name of the hotel? "
 correct_answer_1 = "Bankside"
 
@@ -28,12 +36,12 @@ while current_question_number < how_many_questions:
         score -= 1
         print("Incorrect")
     print("Your score is now: " + str(score))
-    print("")
     current_question_number += 1
     time.sleep(1)
 
 print("Thanks for playing!")
 print("Your final score is: " + str(score))
+print(question_list[random_question_key])
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
