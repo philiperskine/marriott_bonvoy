@@ -8,7 +8,7 @@ question_list = {
     '3':"What is the member code for a Gold Elite member (25-49 Nights/Year)? ",
     '4':"What is the member code for a Platinum Elite member (50-74 Nights/Year)? ",
     '5':"What is the member code for a Titanium Elite member (75+ Nights/Year)? ",
-    '6':"What is the member code for a Ambassador Elite member (100+ Nights and 23k USD qualifying spend/Year)? "
+    '6':"What is the member code for an Ambassador Elite member (100+ Nights and 23k USD qualifying spend/Year)? "
 }
 
 # ANSWER DICTIONARY
@@ -23,19 +23,21 @@ answer_list = {
 
 # MAIN
 # Quiz length currently hardcoded to 3 questions
-how_many_questions = 3
+
 current_question_number = 0
 score = 0
-# Random question key from question_list dictionary 
-current_random_key = str(random.randint(1,len(question_list)))
-current_question = (question_list[current_random_key])
-current_correct_answer = (answer_list[current_random_key])
 
 print("Welcome to the Marriott Bonvoy quiz!")
 time.sleep(1)
-print("Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
+how_many_questions = int(input("How many questions would you like to answer today? "))
+print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
 time.sleep(1)
 while current_question_number < how_many_questions:
+    # Random question key from question_list dictionary 
+    current_random_key = str(random.randint(1,len(question_list)))
+    current_question = (question_list[current_random_key])
+    current_correct_answer = (answer_list[current_random_key])
+        
     user_answer = input(current_question)
     # Correct answer
     if current_correct_answer.lower() == user_answer.lower():
@@ -47,8 +49,10 @@ while current_question_number < how_many_questions:
     current_question_number += 1
     time.sleep(1)
 
+# Game over 
 print("Thanks for playing!")
-print("Your final score is: " + str(score))
+time.sleep(1)
+print("Your final score is: " + str(score) + " out of " + str(how_many_questions))
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
