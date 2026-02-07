@@ -22,8 +22,6 @@ answer_list = {
 }
 
 # MAIN
-# Quiz length currently hardcoded to 3 questions
-
 current_question_number = 0
 score = 0
 
@@ -32,13 +30,14 @@ time.sleep(1)
 how_many_questions = int(input("How many questions would you like to answer today? "))
 print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
 time.sleep(1)
+
 while current_question_number < how_many_questions:
     # Random question key from question_list dictionary 
     current_random_key = str(random.randint(1,len(question_list)))
     current_question = (question_list[current_random_key])
     current_correct_answer = (answer_list[current_random_key])
-        
     user_answer = input(current_question)
+    
     # Correct answer
     if current_correct_answer.lower() == user_answer.lower():
         score += 1
@@ -46,6 +45,7 @@ while current_question_number < how_many_questions:
     # Incorrect answer     
     else:
         print("Incorrect")
+    
     current_question_number += 1
     time.sleep(1)
 
