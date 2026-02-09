@@ -22,37 +22,55 @@ answer_list = {
 }
 
 # MAIN
-current_question_number = 0
-score = 0
+new_round_start = True
 
-print("Welcome to the Marriott Bonvoy quiz!")
-time.sleep(1)
-how_many_questions = int(input("How many questions would you like to answer today? "))
-print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
-time.sleep(1)
-
-while current_question_number < how_many_questions:
-    # Random question key from question_list dictionary 
-    current_random_key = str(random.randint(1,len(question_list)))
-    current_question = (question_list[current_random_key])
-    current_correct_answer = (answer_list[current_random_key])
-    user_answer = input(current_question)
-    
-    # Correct answer
-    if current_correct_answer.lower() == user_answer.lower():
-        score += 1
-        print("Correct! + 1 point!")
-    # Incorrect answer     
-    else:
-        print("Incorrect")
-    
-    current_question_number += 1
+while new_round_start == True:
+    current_question_number = 0
+    score = 0
+    play_again = ''
+        
+    print("Welcome to the Marriott Bonvoy quiz!")
     time.sleep(1)
+    # ISSUE -> Need input validation here!
+    how_many_questions = int(input("How many questions would you like to answer today? "))
 
-# Game over 
-print("Thanks for playing!")
-time.sleep(1)
-print("Your final score is: " + str(score) + " out of " + str(how_many_questions))
+    print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
+    time.sleep(2)
+    print()
+
+    while current_question_number < how_many_questions:
+        # Random question key from question_list dictionary 
+        current_random_key = str(random.randint(1,len(question_list)))
+        current_question = (question_list[current_random_key])
+        current_correct_answer = (answer_list[current_random_key])
+        user_answer = input(current_question)
+        
+        # Correct answer
+        if current_correct_answer.lower() == user_answer.lower():
+            score += 1
+            print("Correct! + 1 point!")
+        # Incorrect answer     
+        else:
+            print("Incorrect")
+        
+        current_question_number += 1
+        time.sleep(1)
+
+    # Round over 
+    print("Your final score is: " + str(score) + " out of " + str(how_many_questions))
+    time.sleep(1)
+    print()
+    print("Would you like to play again?")
+    play_again = input("Press 'Y' to play again or any other key to quit: ")
+
+    if play_again.lower() == 'y':
+        print("Here we go again, good luck!")
+        time.sleep(2)
+        print()
+    else:
+        print()
+        print("Thanks for playing!")
+        new_round_start = False
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
