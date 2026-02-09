@@ -27,17 +27,15 @@ new_round_start = True
 while new_round_start == True:
     current_question_number = 0
     score = 0
-    play_again = ''
         
     print("Welcome to the Marriott Bonvoy quiz!")
-    time.sleep(1)
+    time.sleep(2)
     # ISSUE -> Need input validation here!
     how_many_questions = int(input("How many questions would you like to answer today? "))
-    if type(how_many_questions) is int:
+    if how_many_questions == 1:
+        print("OK. Here is " + str(how_many_questions) + " question to test your Marriott Bonvoy knowledge.")
+    else:    
         print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
-    else:
-        print("FATAL ERROR: Please enter an integer.")
-    # ISSUE -> Need input validation here!
     time.sleep(2)
     print()
 
@@ -60,6 +58,7 @@ while new_round_start == True:
         time.sleep(1)
 
     # Round over 
+    print()
     print("Your final score is: " + str(score) + " out of " + str(how_many_questions))
     time.sleep(1)
     print()
