@@ -31,8 +31,8 @@ while new_round_start == True:
     print("Welcome to the Marriott Bonvoy quiz!")
     time.sleep(2)        
     how_many_questions = ''
-    valid_integer_input = False
-    while valid_integer_input == False:  
+    
+    while True: 
         try:
             how_many_questions = int(input("How many questions would you like to answer today? "))
             break
