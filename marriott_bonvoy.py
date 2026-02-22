@@ -32,6 +32,12 @@ while new_round_start == True:
     time.sleep(2)
     # ISSUE -> Need input validation here!
     how_many_questions = int(input("How many questions would you like to answer today? "))
+    valid_integer = False
+    while valid_integer == False
+        try:
+            valid_integer == True
+        except ValueError:
+            print("ERROR: Please enter an integer")
     if how_many_questions == 1:
         print("OK. Here is " + str(how_many_questions) + " question to test your Marriott Bonvoy knowledge.")
     else:    
