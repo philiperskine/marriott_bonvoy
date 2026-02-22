@@ -29,15 +29,16 @@ while new_round_start == True:
     score = 0
         
     print("Welcome to the Marriott Bonvoy quiz!")
-    time.sleep(2)
-    # ISSUE -> Need input validation here!
-    how_many_questions = int(input("How many questions would you like to answer today? "))
-    valid_integer = False
-    while valid_integer == False
+    time.sleep(2)        
+    how_many_questions = ''
+    valid_integer_input = False
+    while valid_integer_input == False:  
         try:
-            valid_integer == True
+            how_many_questions = int(input("How many questions would you like to answer today? "))
+            break
         except ValueError:
-            print("ERROR: Please enter an integer")
+            print("Error: Please enter an integer")
+    
     if how_many_questions == 1:
         print("OK. Here is " + str(how_many_questions) + " question to test your Marriott Bonvoy knowledge.")
     else:    
