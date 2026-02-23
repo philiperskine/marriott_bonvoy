@@ -35,9 +35,11 @@ while True:
             how_many_questions = int(input("How many questions would you like to answer today? "))
             break
         except ValueError:
-            print("Error: Please enter an integer")
+            print("Error: Please enter a positive integer only")
     
-    if how_many_questions == 1:
+    if how_many_questions <= 0:
+        print("Error: Please enter a positive integer only")    
+    elif how_many_questions == 1:
         print("OK. Here is " + str(how_many_questions) + " question to test your Marriott Bonvoy knowledge.")
     else:    
         print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
