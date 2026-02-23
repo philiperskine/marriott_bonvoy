@@ -22,9 +22,7 @@ answer_list = {
 }
 
 # MAIN
-new_round_start = True
-
-while new_round_start == True:
+while True:
     current_question_number = 0
     score = 0
         
@@ -65,11 +63,9 @@ while new_round_start == True:
         time.sleep(1)
 
     # Round over 
-    print()
-    print("Your final score is: " + str(score) + " out of " + str(how_many_questions))
+    print("\nYour final score is: " + str(score) + " out of " + str(how_many_questions))
     time.sleep(1)
-    print()
-    print("Would you like to play again?")
+    print("\nWould you like to play again?")
     play_again = input("Press 'Y' to play again or any other key to quit: ")
 
     if play_again.lower() == 'y':
@@ -79,7 +75,7 @@ while new_round_start == True:
     else:
         print()
         print("Thanks for playing!")
-        new_round_start = False
+        break
 
 # MEMBER LEVEL DICTIONARIES
 # No code! -> Non-member
