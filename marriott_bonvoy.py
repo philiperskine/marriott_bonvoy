@@ -27,25 +27,31 @@ while True:
     score = 0
         
     print("Welcome to the Marriott Bonvoy quiz!")
-    time.sleep(2)        
+    time.sleep(1)        
     how_many_questions = ''
-    
+
+    # Input validation to ensure only a positive integer value    
     while True: 
         try:
             how_many_questions = int(input("How many questions would you like to answer today? "))
-            break
+            if how_many_questions >= 1:
+                break
+            else:
+                print("Error: Please enter a positive integer only.")
+                time.sleep(1)
         except ValueError:
-            print("Error: Please enter a positive integer only")
+            print("Error: Please enter a positive integer only.")
+            time.sleep(1)
     
-    if how_many_questions <= 0:
-        print("Error: Please enter a positive integer only")    
-    elif how_many_questions == 1:
+    # Grammar correction if user only requests 1 question
+    if how_many_questions == 1:
         print("OK. Here is " + str(how_many_questions) + " question to test your Marriott Bonvoy knowledge.")
     else:    
         print("OK. Here are " + str(how_many_questions) + " questions to test your Marriott Bonvoy knowledge.")
     time.sleep(2)
     print()
 
+    # Quiz
     while current_question_number < how_many_questions:
         # Random question key from question_list dictionary 
         current_random_key = str(random.randint(1,len(question_list)))
