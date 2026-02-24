@@ -3,6 +3,7 @@ import time
 
 # QUESTION DICTIONARY
 question_list = {
+    # Member code questions
     '1':"What is the member code for a Member (0-9 Nights/Year)? ",
     '2':"What is the member code for a Silver Elite member (10-24 Nights/Year)? ",
     '3':"What is the member code for a Gold Elite member (25-49 Nights/Year)? ",
@@ -23,7 +24,7 @@ answer_list = {
 
 # MAIN
 while True:
-    current_question_number = 0
+    current_question_number = 1
     score = 0
         
     print("Welcome to the Marriott Bonvoy quiz!")
@@ -52,12 +53,12 @@ while True:
     print()
 
     # Quiz
-    while current_question_number < how_many_questions:
+    while current_question_number <= how_many_questions:
         # Random question key from question_list dictionary 
         current_random_key = str(random.randint(1,len(question_list)))
         current_question = (question_list[current_random_key])
         current_correct_answer = (answer_list[current_random_key])
-        user_answer = input(current_question)
+        user_answer = input('Q' + str(current_question_number) + ": " + current_question)
         
         # Correct answer
         if current_correct_answer.lower() == user_answer.lower():
