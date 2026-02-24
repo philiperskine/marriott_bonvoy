@@ -17,7 +17,9 @@ question_list = {
     '10':"What is the minimum number of nights per year required for Titanium Elite membership? ",
     '11':"What is the minimum number of nights per year required for Ambassador Elite membership? ",
     # Minimum qualifying spend for Ambassador
-    '12':"What number completes the sentence below?\n__k USD is the minimum qualifying spend per year to become an Ambassador Elite member. "
+    '12':"What number completes the sentence below?\n__k USD is the minimum qualifying spend per year to become an Ambassador Elite member. ",
+    # Number of base points to USD
+    '13':"How many Base Points do you earn per 1 USD spent? "
 }
 
 # ANSWER DICTIONARY
@@ -36,7 +38,9 @@ answer_list = {
     '10':"75",
     '11':"100",
     # Minimum qualifying spend for Ambassador
-    '12':"23"
+    '12':"23",
+    # Number of base points to USD
+    '13':"10"
 }
 
 # MAIN
@@ -95,12 +99,10 @@ while True:
     play_again = input("Press 'Y' to play again or any other key to quit: ")
 
     if play_again.lower() == 'y':
-        print("Here we go again, good luck!")
+        print("Here we go again, good luck!\n")
         time.sleep(2)
-        print()
     else:
-        print()
-        print("Thanks for playing!")
+        print("\nThanks for playing!")
         break
 
 # MEMBER LEVEL DICTIONARIES
