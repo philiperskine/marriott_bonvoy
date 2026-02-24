@@ -3,23 +3,40 @@ import time
 
 # QUESTION DICTIONARY
 question_list = {
-    # Member code questions
-    '1':"What is the member code for a Member (0-9 Nights/Year)? ",
-    '2':"What is the member code for a Silver Elite member (10-24 Nights/Year)? ",
-    '3':"What is the member code for a Gold Elite member (25-49 Nights/Year)? ",
-    '4':"What is the member code for a Platinum Elite member (50-74 Nights/Year)? ",
-    '5':"What is the member code for a Titanium Elite member (75+ Nights/Year)? ",
-    '6':"What is the member code for an Ambassador Elite member (100+ Nights and 23k USD qualifying spend/Year)? "
+    # Member codes
+    '1':"What is the member code for a Member? ",
+    '2':"What is the member code for a Silver Elite member? ",
+    '3':"What is the member code for a Gold Elite member? ",
+    '4':"What is the member code for a Platinum Elite member? ",
+    '5':"What is the member code for a Titanium Elite member? ",
+    '6':"What is the member code for an Ambassador Elite member? ",
+    # Minimum number of nights
+    '7':"What is the minimum number of nights per year required for Silver Elite membership? ",
+    '8':"What is the minimum number of nights per year required for Gold Elite membership? ",
+    '9':"What is the minimum number of nights per year required for Platinum Elite membership? ",
+    '10':"What is the minimum number of nights per year required for Titanium Elite membership? ",
+    '11':"What is the minimum number of nights per year required for Ambassador Elite membership? ",
+    # Minimum qualifying spend for Ambassador
+    '12':"What number completes the sentence below?\n__k USD is the minimum qualifying spend per year to become an Ambassador Elite member. "
 }
 
 # ANSWER DICTIONARY
 answer_list = {
+    # Member codes
     '1':"Y1",
     '2':"M1",
     '3':"X1",
     '4':"P6",
     '5':"X4",
-    '6':"X5"
+    '6':"X5",
+    # Minimum number of nights
+    '7':"10",
+    '8':"25",
+    '9':"50",
+    '10':"75",
+    '11':"100",
+    # Minimum qualifying spend for Ambassador
+    '12':"23"
 }
 
 # MAIN
@@ -66,7 +83,7 @@ while True:
             print("Correct! + 1 point!")
         # Incorrect answer     
         else:
-            print("Incorrect")
+            print("Incorrect. The correct answer is " + current_correct_answer + '.')
         
         current_question_number += 1
         time.sleep(1)
